@@ -1,6 +1,6 @@
 package DataStructures;
 
-public class BinarySearch1 {
+public class BinarySearch {
 	
 	 public static int binarySearch(int arr[], int first, int last, int key){  
 	        if (last>=first){  
