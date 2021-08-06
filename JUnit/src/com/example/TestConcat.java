@@ -14,7 +14,8 @@ public class TestConcat {
 
 	@Test
 	public void test() {
-		assertEquals("hellohai",Concat.concat("hai", "hello"));
+		String str="hellohai";
+		assertEquals("hellohai",str);
 	}
 
 }
