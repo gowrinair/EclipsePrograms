@@ -10,14 +10,14 @@ public class JDBC_con {
 		try {
 			
 			Connection con=DriverManager.getConnection("jdbc:mysql://localhost","root","root");
-			Connection con1=DriverManager.getConnection("jdbc:mysql://localhost:3306/banking","root","root");
 			Statement stmnt=con.createStatement();
-			Statement st=con1.createStatement();
+						
 			customer_details obj=new customer_details();
+			
 			//obj.createDB(con, stmnt);
-			//obj.createCustomer_Details(con1, st);
-			obj.insertCustomer_Details(con1, st);
-			obj.selectCustomer_Details(con1, st);
+			obj.createCustomer_Details(con, stmnt);
+			obj.insertCustomer_Details(con, stmnt);
+			obj.selectCustomer_Details(con, stmnt);
 			con.close();
 		}
 		catch (Exception e) {
