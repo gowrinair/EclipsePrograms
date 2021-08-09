@@ -1,9 +1,0 @@
-package com.example;
-
-public class ArithmeticOp {
-
-	public int add(int a,int b) {
-		int c=a+b;
-		return c;
-	}
-}
