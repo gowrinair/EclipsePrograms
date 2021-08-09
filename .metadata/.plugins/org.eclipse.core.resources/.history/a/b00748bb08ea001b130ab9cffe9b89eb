@@ -1,0 +1,34 @@
+package com.example;
+
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
+import org.junit.runner.notification.Failure;
+
+public class ArithmeticOp {
+
+	public static int add(int a,int b) {
+		int c=a+b;
+		System.out.println(c);
+		return c;
+	}
+	
+	public static int sub(int a,int b) {
+		int c=a-b;
+		return c;
+	}
+	
+	public static int multiply(int a,int b) {
+		int c=a*b;
+		return c;
+	}
+	
+	public static void main(String[] args) {									
+	    Result result = JUnitCore.runClasses(Junit4AssertionTest.class);					
+				for (Failure failure : result.getFailures()) {							
+	       System.out.println(failure.toString());					
+	    }		
+	    System.out.println("Result=="+result.wasSuccessful());							
+	 }	
+	
+	
+}

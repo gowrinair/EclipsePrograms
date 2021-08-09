@@ -1,0 +1,112 @@
+package EmployeeDB_Connection;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class JDBC_Fcatory {
+	
+	public static void main(String[] args) {
+		try {
+			
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/employee","root","root");
+			Statement stmnt=con.createStatement();
+			
+			Scanner sc=new Scanner(System.in);
+			int ch;
+			do {
+				System.out.println("\n---------Employee Database------------\n");
+				System.out.println("Choose your options: ");
+				System.out.println("1.Show All tables\n2.Select \n3.Insert \n4.Delete\n5.Exit");
+				ch=sc.nextInt();
+			
+				ResultSet rs;
+			switch(ch) {
+			
+			case 1:  rs = stmnt.executeQuery("show tables");
+					while (rs.next()) {
+						System.out.println(rs.getString(1)+"  ");
+					}
+					break;
+			case 2: System.out.println("Choose the table to select: \n1.employee\n2.departments\n");
+					int c=sc.nextInt();
+					if(c==1) {
+						 rs = stmnt.executeQuery("select * from employees");
+							while (rs.next()) {
+								System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3)+"  "+rs.getString(4)+"  ");
+							}	
+					}
+					else {
+						rs = stmnt.executeQuery("select * from departments");
+						while (rs.next()) {
+							System.out.println(rs.getString(1)+"  "+rs.getString(2)+"  ");
+						}	
+						
+					}
+					break;
+			case 3: System.out.println("Choose the table to insert: \n1.departments\n\n2.employees\n");
+					int c1=sc.nextInt();
+					if(c1==1) {
+						String sql= "insert into departments values\r\n"
+								+ "('BA','Business Analyst')";
+						
+						int r=stmnt.executeUpdate(sql);
+						if(r==1)
+							System.out.println("Insertion succesfully: "+sql);
+						else
+							System.out.println("insertion failed!");
+					}
+					else {
+						String sql= "insert into employees values\r\n"
+								+ "('121','Gowri','Nair','F')";
+						
+						int r=stmnt.executeUpdate(sql);
+						if(r==1)
+							System.out.println("Insertion succesfully: "+sql);
+						else
+							System.out.println("insertion failed!");
+					}
+						
+					break;
+			case 4: System.out.println("Choose the table to delete:\n1.employees\n2.departments\n");
+					int c2=sc.nextInt();
+					if(c2==1)
+					{
+						String sql= "Delete from employees where emp_no=121";
+						int r=stmnt.executeUpdate(sql);
+						if(r==1)
+							System.out.println("Deleted succesfully: "+sql);
+						else
+							System.out.println("Deletion failed!");
+					}
+					else {
+						String sql= "Delete from departments where dept_no=BA";
+						int r=stmnt.executeUpdate(sql);
+						if(r==1)
+							System.out.println("Deleted succesfully: "+sql);
+						else
+							System.out.println("Deletion failed!");
+						
+					}
+					break;
+			case 5: System.out.println("Exiting");		
+					break;
+			
+			default:System.out.println("Invalid choice");
+					break;
+			
+			}
+			}while(ch!=5);
+			
+			con.close();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
+	}
+	
+}	

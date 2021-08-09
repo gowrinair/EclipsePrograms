@@ -1,0 +1,14 @@
+package Week2_Programs;
+
+import java.util.Scanner;
+
+public class Q6_StringToInt {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the string: ");
+		String s=sc.next();
+		int i=Integer.parseInt(s);
+		System.out.println("String to int: "+i);
+	}
+
+}

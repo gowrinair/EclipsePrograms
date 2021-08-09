@@ -1,0 +1,197 @@
+package Week2_Programs;
+
+import java.util.Scanner;
+
+public class AirlineReservation {
+	int persons;
+	String name[];
+	int age[];
+	long phNo;
+	int flightNo;
+	double totalCost;
+	char coupon;
+	
+	
+	
+	public int getPersons() {
+		return persons;
+	}
+
+	public void setPersons(int persons) {
+		this.persons = persons;
+	}
+
+	public String[] getName() {
+		return name;
+	}
+
+	public void setName(String[] name) {
+		this.name = name;
+	}
+
+	public int[] getAge() {
+		return age;
+	}
+
+	public void setAge(int[] age) {
+		this.age = age;
+	}
+
+	public long getPhNo() {
+		return phNo;
+	}
+
+	public void setPhNo(long phNo) {
+		this.phNo = phNo;
+	}
+
+	public int getFlightNo() {
+		return flightNo;
+	}
+
+	public void setFlightNo(int flightNo) {
+		this.flightNo = flightNo;
+	}
+
+	public double getTotalCost() {
+		return totalCost;
+	}
+
+	public void setTotalCost(double totalCost) {
+		this.totalCost = totalCost;
+	}
+
+	public char getCoupon() {
+		return coupon;
+	}
+
+	public void setCoupon(char coupon) {
+		this.coupon = coupon;
+	}
+
+	public Scanner getSc() {
+		return sc;
+	}
+
+	public void setSc(Scanner sc) {
+		this.sc = sc;
+	}
+
+	Scanner sc=new Scanner(System.in);
+	
+	void airline() {
+		
+		System.out.println("----Welcome to AirExpress------");
+		char ch;
+		do {
+			System.out.println("Choose any option: \n 1.Top Flight Routes\n 2.Exciting Offers\n 3.Give your details\n 4.Book Flights\n 5.Know More About AirExpress");
+			int choice=sc.nextInt();
+		
+			switch(choice) {
+				case 1: System.out.println("SpiceJet : DELHI (20:05) ----> MUMBAI (22:05)  [4655/- per person]");	
+						System.out.println();
+						System.out.println("VISTARA  : MUMBAI (20:55)----> BANGLORE (22:40) [9266/- per person] ");
+						System.out.println();
+						System.out.println("Air India: DELHI (20:50) ----> GOA (12:45) [9000/- per person]");
+						break;
+				case 2: System.out.println(" (*) Promo Code: EASEFLY to get flat Rs.350 OFF on any flights");
+						break;	
+				case 3: System.out.println("Give your details for flight booking!");
+						detailsForBooking();
+						break;
+				case 4: System.out.println("You are one step away for your journey!");	
+						bookTickets();
+						ticketGeneration();
+						break;
+				
+				case 5: System.out.println("\r\n"
+						+ "AirExpress is the flag carrier airline of India.\n Headquartered at New Delhi.\n It is owned by AirExpress Limited.\n A government-owned enterprise.\n  Operates a fleet of Airbus and Boeing aircraft serving 102 domestic and international destinations. ");
+						break;
+				default:System.out.println("Invalid Choice!");
+						break;
+		
+			}System.out.println();
+			System.out.println("Do you want to continue? : Y or N");
+			 ch = sc.next().charAt(0); 
+		} 
+		while(ch=='Y'||ch=='y');
+		System.out.println("THANK YOU FOR CHOOSING US!!");
+	}
+	
+ void detailsForBooking() {
+	System.out.println("Choose your flight: ");
+	System.out.println("101. SpiceJet : DELHI (20:05) ----> MUMBAI (22:05)  [4655/- per person]");	
+	System.out.println();
+	System.out.println("201. VISTARA  : MUMBAI (20:55)----> BANGLORE (22:40) [9266/- per person]");
+	System.out.println();
+	System.out.println("301 .Air India: DELHI (20:50) ----> GOA (12:45) [9000/- per person]");
+	int flightNo=sc.nextInt();
+	setFlightNo(flightNo);
+	if(flightNo==101||flightNo==201||flightNo==301)
+	{
+		System.out.println("Enter a phone number for booking: ");
+		phNo=sc.nextLong();
+		System.out.println("Enter the no.of passengers: ");
+		persons=sc.nextInt();
+		String name[]=new String[persons];
+		int age[]=new int[persons];
+		setPersons(persons);
+		for(int i=0;i<persons;i++) {
+			System.out.println("Enter the name of "+(i+1)+" passenger: ");
+			name[i]=sc.next();
+			setName(name);
+			System.out.println("Enter the age: ");
+			age[i]=sc.nextInt();
+			setAge(age);
+		
+		}
+		System.out.println("Dou want to avail coupon code? Y or N");
+		coupon=sc.next().charAt(0);
+	
+ 	}else 
+ 		System.out.println("Enter valid flight number");
+	
+ }
+ 
+
+
+double bookTickets() {
+	switch(flightNo) {
+	case 101: if(coupon=='Y'||coupon=='y')
+				  totalCost=persons*(4655-350);
+	 		  else
+	 			  totalCost=persons*4655; 
+	          break;
+	case 201: if(coupon=='Y'||coupon=='y')
+				  totalCost=persons*(9266-350);
+	 		  else
+	 			  totalCost=persons*9266;
+			  break;
+	case 301: if(coupon=='Y'||coupon=='y')
+				  totalCost=persons*(9000-350);
+			  else
+				  totalCost=persons*9000; 
+			  break; 
+	}
+	return totalCost;
+	
+}
+
+void ticketGeneration() {
+	System.out.println("Download your flight tickets now!");
+	for(int j=0;j<persons;j++) {
+		System.out.print("Name of "+(j+1)+" person: "+name[j]);
+		System.out.println("  Age: "+age[j]);
+	}
+	if(flightNo==101) {
+		System.out.println("Departure: DELHI at 20:05\n Arrival: MUMBAI at 22:05");
+		System.out.println("Total Cost for your flight: "+totalCost);}
+	if(flightNo==201) {
+		System.out.println("Departure: MUMBAI at 20:55\n Arrival: BANGLORE at 22:40");
+		System.out.println("Total Cost for your flight: "+totalCost);}
+	if(flightNo==301) {
+		System.out.println("Departure: DELHI at 20:50\n Arrival: GOA at 12:45");
+		System.out.println("Total Cost for your flight: "+totalCost);}
+}
+
+}

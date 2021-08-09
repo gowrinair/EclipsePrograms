@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+    <fullyQualifiedTypeName name="OOPS.Student"/>
+    <fullyQualifiedTypeName name="OOPS.Operations"/>
+    <fullyQualifiedTypeName name="OOPS.RectangleArea"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.text.DateFormat"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="javax.naming.spi.DirStateFactory.Result"/>
+    <fullyQualifiedTypeName name="org.junit.runner.Result"/>
+    <fullyQualifiedTypeName name="org.junit.runner.notification.Failure"/>
+    <fullyQualifiedTypeName name="org.junit.runner.JUnitCore"/>
+    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+    <fullyQualifiedTypeName name="org.junit.After"/>
+    <fullyQualifiedTypeName name="org.junit.AfterClass"/>
+    <fullyQualifiedTypeName name="com.example.Calculation"/>
+    <fullyQualifiedTypeName name="com.example.ArithmeticOp"/>
+    <fullyQualifiedTypeName name="com.example.StringPalindrome"/>
+    <fullyQualifiedTypeName name="com.example.Average"/>
+    <fullyQualifiedTypeName name="com.example.LargestNumber"/>
+    <fullyQualifiedTypeName name="com.example.CirclePerimeter"/>
+    <fullyQualifiedTypeName name="com.example.Age"/>
+    <fullyQualifiedTypeName name="com.example.CylinderSA"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="com.example.LeapYear"/>
+    <fullyQualifiedTypeName name="com.example.Concat"/>
+</qualifiedTypeNameHistroy>

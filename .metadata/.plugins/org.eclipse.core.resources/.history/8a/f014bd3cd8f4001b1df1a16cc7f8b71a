@@ -1,0 +1,64 @@
+package EmployeeDB_Connection;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class JDBC_Fcatory {
+	
+	public static void main(String[] args) {
+		try {
+			
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/employee","root","root");
+			Statement stmnt=con.createStatement();
+			
+			Scanner sc=new Scanner(System.in);
+			int ch;
+			do {
+				System.out.println("\n---------Employee Database------------\n");
+				System.out.println("Choose your options: ");
+				System.out.println("1.Show All tables\n2.Select \n3.Insert \n4.Exit");
+				ch=sc.nextInt();
+			
+				ResultSet rs;
+			switch(ch) {
+			
+			case 1:  rs = stmnt.executeQuery("show tables");
+					while (rs.next()) {
+						System.out.println(rs.getString(1)+"  ");
+					}
+					break;
+			case 2: System.out.println("Choose the table to select: \n1.employee\2.departments\n");
+					int c=sc.nextInt();
+					if(c==1) {
+						 rs = stmnt.executeQuery("select * from employees");
+							while (rs.next()) {
+								System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3)+"  "+rs.getString(4)+"  ");
+							}	
+					}
+					else {
+						rs = stmnt.executeQuery("select * from departments");
+						while (rs.next()) {
+							System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  ");
+						}	
+						
+					}
+					break;
+			default:System.out.println("Invalid choice");
+					break;
+			
+			}
+			}while(ch!=4);
+			
+			con.close();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
+	}
+	
+}	

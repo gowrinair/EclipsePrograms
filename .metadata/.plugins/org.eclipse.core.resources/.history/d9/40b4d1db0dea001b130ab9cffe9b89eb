@@ -1,0 +1,18 @@
+package com.example;
+
+public class StringPalindrome {
+	
+	private static void PalindromeString(String a) {
+		boolean result = true;
+		int l = a.length();
+		for(int i=0; i < l/2; i++) {
+			if(a.charAt(i) != a.charAt(l-i-1)) {
+				result = false;
+				break;
+			}
+		}
+		System.out.println(a + " is palindrome = "+result);
+		
+	}
+
+}

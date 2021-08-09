@@ -1,0 +1,20 @@
+package OOPS;
+
+public class ex {
+	public static void main(String[] args) {
+		System.out.println("hello");
+		demo d=new demo();
+		d.b;
+		d.a;
+	}
+	
+
+}
+
+ class demo{
+	 int a=10;
+	public void msg(){
+		int b=10;
+		System.out.println("hai");
+	}
+}

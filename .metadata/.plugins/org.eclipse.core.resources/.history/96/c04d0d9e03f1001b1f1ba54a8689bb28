@@ -1,0 +1,44 @@
+package DataStructures;
+
+import java.util.Scanner;
+
+public class SelectionSort {
+	
+	public static void main(String[] args) {
+		
+	}
+	
+	public void sort() {
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the no.of elemets in the array: ");
+		int n=sc.nextInt();
+		
+		int a[]=new int[n];
+		
+		System.out.println("Enter "+n+ " elements to sort: ");
+		for(int i=0;i<n;i++) {
+			a[i]=sc.nextInt();
+		}
+		
+		for(int i=0;i<n-1;i++)
+		{
+			int MIN=i; //set the first position as minimum
+			System.out.println("Sorting based on Number "+(i+1));
+			//Find the smallest element by comparing with the element in MIN position
+			for(int j=i+1;j<n;j++)
+			{
+				System.out.println("Comparing "+ a[MIN] + " and " + a[j]);
+				if(a[j]<a[MIN])
+				{
+					System.out.println(a[MIN] + " is greater than " + a[j] );
+					MIN=j;
+				}
+			}
+			//Swap the smallest element with element in MIN position
+			int temp=a[i];
+			a[i]=a[MIN];
+			a[MIN]=temp;
+		}
+	}
+}

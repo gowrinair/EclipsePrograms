@@ -1,0 +1,18 @@
+package com.example;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class TestPalindrome {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	public static void testPalindrome() {
+		System.out.println("Test Palindrome");
+		assertEquals("wow",StringPalindrome.PalindromeString("malayalam"));
+	}
+}

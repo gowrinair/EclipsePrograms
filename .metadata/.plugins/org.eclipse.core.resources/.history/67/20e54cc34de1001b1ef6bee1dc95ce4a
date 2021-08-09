@@ -1,0 +1,18 @@
+package Week2_Programs;
+
+import java.util.Scanner;
+
+public class AirlineReservation {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("-----Welcome to AirExpress------\n");
+		System.out.println("Choose any option: \n 1.Top Flight Routes\n 2.Book Flights\n 3.Exciting Offers\n 4.Know More About AirExpress");
+		int choice=sc.nextInt();
+		
+		switch(choice) {
+		case 1: System.out.println();
+		}
+		
+	}
+	
+}

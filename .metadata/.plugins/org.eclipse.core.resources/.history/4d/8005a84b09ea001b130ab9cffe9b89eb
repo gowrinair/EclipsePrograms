@@ -1,0 +1,28 @@
+package com.example;
+
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
+import org.junit.runner.notification.Failure;
+
+public class ArithmeticOp {
+
+	public static int add(int a,int b) {
+		int c=a+b;
+		System.out.println(c);
+		return c;
+	}
+	
+	public static int sub(int a,int b) {
+		int c=a-b;
+		return c;
+	}
+	
+	public static int multiply(int a,int b) {
+		int c=a*b;
+		return c;
+	}
+	
+	
+	
+}
+
